@@ -72,8 +72,22 @@ nav ul{
     font-weight: 700;
     line-height: 160%;
     color: var(--header-nav-font-color);
+
+    
 }
 
+div#app nav ul li{
+    cursor: pointer;
+
+    transition: 0.5s ease;
+
+}
+
+div#app nav ul li:hover{
+    
+     color: #000;
+
+}
 
 div#app nav ul li.active{
     color: var(--main-font-color);
@@ -204,13 +218,16 @@ figure.galery-item{
 
     cursor: pointer;
 
+    transition: 0.2s ease-in;
+
+
   
 }
 
-/* figure.galery-item:hover{
+figure.galery-item:hover{
     
     transform: scale(1.03);
-} */
+}
 
 
 
