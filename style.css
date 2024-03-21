@@ -1,0 +1,373 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Vendor prefixes para suavização das fontes na tela  */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+/* Root element */
+:root{
+     /* Variaveis CSS */
+
+     --hue-base: 240;
+
+     --header-nav-font-color: hsl(var(--hue-base), 6%, 58%);
+     --header-input-font-color: hsl(0, 0%, 24%);
+     --header-input-back-color: hsl(0, 0%, 93%);
+    
+     --main-back-color: hsl(0, 0%, 96%);
+     --main-font-color: hsl(var(--hue-base), 6%, 13%); 
+     --main-bc-color: hsl(0, 0%, 100%);
+
+     --footer-font-color: hsl(var(--hue-base), 6%, 21%);
+
+    /* 1rem === 10px */
+    font-size: 62.5%;
+    font-family: "Mulish", "Arial";
+    color: var(--main-font-color);
+
+    
+
+}
+
+body{
+    /* Back body font-size to standard */
+    font-size: 1.6rem;  
+    height: 100vh;
+}
+
+
+div#app{
+    height: 100vh;
+    grid-template-rows: max-content 1fr max-content;
+    display: grid;
+   
+}
+
+
+
+i.ph-shopping-cart-simple{
+    font-size: 3.2rem;
+    color: black;
+    transition: 0.5s ease-in;
+    cursor: pointer;
+}
+
+i.ph-shopping-cart-simple:hover{
+    transform: scale(1.08);
+}
+div#app header, 
+nav, 
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 7.2rem;
+    list-style: none;
+
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 160%;
+    color: var(--header-nav-font-color);
+}
+
+
+div#app nav ul li.active{
+    color: var(--main-font-color);
+}
+
+
+div#app header form{
+    flex: 1;
+}
+
+
+
+div#app header form div.input-wrapper label{
+    position: absolute; 
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+}
+
+
+div#app header form div.input-wrapper input{
+    min-width: 100%;
+
+    padding: 1.6rem;
+
+    font-family: "Mulish", "Arial";
+
+    
+    border: none;
+    border-radius: 0.6rem;
+
+    background-color: var(--header-input-back-color);
+
+
+
+}
+
+div#app header form div.input-wrapper input::placeholder{
+    
+    font-family: "Mulish", "Arial";
+    font-weight: 600;
+    font-size: 1.6rem;
+
+    color: var(--header-input-font-color);
+
+    opacity: 0.56;
+
+
+
+}
+
+
+div#app header img.avatar{
+    width: 4.2rem;
+    height: 4.2rem;
+
+    /* Caso a imagem fique esticada */
+
+    object-fit: cover; /* A imagem vai cobrir todo o espaço do elemento */
+    border-radius: 50%; /* Deixa a imagem redonda */
+
+
+    /* Caso a imagem fique esticada */
+
+    object-fit: cover; /* A imagem vai cobrir todo o espaço do elemento */
+    border-radius: 50%; /* Deixa a imagem redonda */
+    transition: 0.5s;
+    cursor: pointer;
+    
+}
+
+
+div#app header img.avatar:hover{
+
+    filter: brightness(50%); /* Deixa a imagem com 50% de brilho */
+
+}
+
+
+
+
+
+.container{
+    padding: 1.6rem 3.2rem;
+    width: min(112rem ,100%);
+    margin: 0 auto;
+    
+}
+
+
+
+/* Galery */
+main{
+    /* Chamando a nossa variável CSS */
+    background-color: var(--main-back-color);
+
+    /* Controla o trasbordamento de conteúdo no eixo vertical */
+    overflow-y: scroll;
+    
+
+    
+}
+
+main div.container h1{
+    font-size: 2.4rem;
+    padding: 1.6rem 0 0;
+    
+}
+
+
+div.container section.galery-container{
+    margin-top: 3.6rem;
+    display: grid;
+    gap: 2.2rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    
+
+}
+
+figure.galery-item{
+    
+    border-radius: 0.8rem;
+    background-color: var(--main-back-color);
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    /* transition: transform 0.5s ease-in-out 0s; Propriedade | duração | forma de transição ( velocidade ) | delay */
+
+    cursor: pointer;
+
+  
+}
+
+/* figure.galery-item:hover{
+    
+    transform: scale(1.03);
+} */
+
+
+
+ figure.galery-item img{
+    width:100%;
+    aspect-ratio: 16/9; /*Mexe com a proporção do elemento*/
+    object-fit: cover;
+    display: block;
+    
+    /* transition-property: filter, transform; Propriedades que serão inclusas na transição */
+    /* transition-duration: 0.200s; Duração da transição */
+    /* transition-delay: 0; Tempo de espera para que a transição comece */
+    /* transition-timing-function: ease-out; Função que controla a velocidade da transição baseada na curva de bezier */
+
+    transition: filter, transform 0.200s ease-out 0s; 
+    
+
+    
+ 
+
+ }
+
+ figure.galery-item img:hover{
+    filter:  hue-rotate(10deg) /*Gira a cor da imagem*/ contrast(101%) /*Aumenta o contraste da imagem*/ saturate(200%); /*Aumenta a saturação da imagem*/
+
+    transform: scale(1.03) rotate(-0.3deg);
+
+    
+ }
+
+
+ figure.galery-item figcaption.description{
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    position: relative;
+    z-index: 1;
+ }
+  
+ figure.galery-item figcaption.description h2{
+    
+    font-size: 1.8rem;
+ }
+
+ figure.galery-item figcaption.description span{
+    font-size: 1.2rem;
+    padding: .8rem;
+    background-color: var(--header-input-back-color);
+    border-radius: .6rem;
+ }
+
+footer p{
+    text-align: center;
+    padding: 1.6rem;
+    font-weight: 600;
+}
+
+
+
+header{
+    --startY: -100%;
+    animation: move .5s ease-in-out;
+   
+}
+
+
+figure.galery-item{
+    --delay: 0.2s;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-delay: var(--delay);
+    animation-fill-mode: backwards;
+    
+}
+
+footer{
+    --startY: 100%;
+    animation: move .5s ease-in-out;
+    
+}
+
+
+@keyframes move {
+    from{
+        transform: translateY(var(--startY));
+    }
+}
+
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50%{
+        opacity: .5;
+        transform: scale(1.05);
+
+    }
+
+   
+}
+
+/* 
+Se você estiver usando transformações, valores negativos em translateY movem o elemento para cima e valores positivos movem o elemento para baixo. */
+
+@media screen and (max-width: 768px) {
+    div#app header,
+    nav,
+    nav ul {
+        flex-direction: column;
+        gap: 1.6rem;
+        text-align: center;
+    }
+
+    div#app header form div.input-wrapper input {
+        width: 100%;
+    }
+
+    main div.container section.galery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    div#app header,
+    nav,
+    nav ul {
+        gap: 3rem;
+    }
+
+    div#app header img.avatar {
+        width: 3.6rem;
+        height: 3.6rem;
+    }
+
+    main div.container section.galery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    div#app header,
+    nav,
+    nav ul {
+        gap: 1rem;
+    }
+
+    div#app header img.avatar {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    main div.container section.galery-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
