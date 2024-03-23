@@ -2,16 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    /* Vendor prefixes para suavização das fontes na tela  */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
 }
 
-/* Root element */
 :root{
-     /* Variaveis CSS */
 
      --hue-base: 240;
 
@@ -25,7 +21,6 @@
 
      --footer-font-color: hsl(var(--hue-base), 6%, 21%);
 
-    /* 1rem === 10px */
     font-size: 62.5%;
     font-family: "Mulish", "Arial";
     color: var(--main-font-color);
@@ -35,7 +30,6 @@
 }
 
 body{
-    /* Back body font-size to standard */
     font-size: 1.6rem;  
     height: 100vh;
 }
@@ -110,18 +104,11 @@ div#app header form div.input-wrapper label{
 
 div#app header form div.input-wrapper input{
     min-width: 100%;
-
     padding: 1.6rem;
-
     font-family: "Mulish", "Arial";
-
-    
     border: none;
     border-radius: 0.6rem;
-
     background-color: var(--header-input-back-color);
-
-
 
 }
 
@@ -130,30 +117,19 @@ div#app header form div.input-wrapper input::placeholder{
     font-family: "Mulish", "Arial";
     font-weight: 600;
     font-size: 1.6rem;
-
     color: var(--header-input-font-color);
-
     opacity: 0.56;
-
-
-
 }
 
 
 div#app header img.avatar{
     width: 4.2rem;
     height: 4.2rem;
+    object-fit: cover; 
+    border-radius: 50%;
 
-    /* Caso a imagem fique esticada */
-
-    object-fit: cover; /* A imagem vai cobrir todo o espaço do elemento */
-    border-radius: 50%; /* Deixa a imagem redonda */
-
-
-    /* Caso a imagem fique esticada */
-
-    object-fit: cover; /* A imagem vai cobrir todo o espaço do elemento */
-    border-radius: 50%; /* Deixa a imagem redonda */
+    object-fit: cover; 
+    border-radius: 50%;
     transition: 0.5s;
     cursor: pointer;
     
@@ -162,13 +138,9 @@ div#app header img.avatar{
 
 div#app header img.avatar:hover{
 
-    filter: brightness(50%); /* Deixa a imagem com 50% de brilho */
+    filter: brightness(50%);
 
 }
-
-
-
-
 
 .container{
     padding: 1.6rem 3.2rem;
@@ -177,18 +149,9 @@ div#app header img.avatar:hover{
     
 }
 
-
-
-/* Galery */
 main{
-    /* Chamando a nossa variável CSS */
     background-color: var(--main-back-color);
-
-    /* Controla o trasbordamento de conteúdo no eixo vertical */
     overflow-y: scroll;
-    
-
-    
 }
 
 main div.container h1{
@@ -214,18 +177,11 @@ figure.galery-item{
     background-color: var(--main-back-color);
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    /* transition: transform 0.5s ease-in-out 0s; Propriedade | duração | forma de transição ( velocidade ) | delay */
-
     cursor: pointer;
-
     transition: 0.2s ease-in;
-
-
-  
 }
 
-figure.galery-item:hover{
-    
+figure.galery-item:hover{  
     transform: scale(1.03);
 }
 
@@ -233,30 +189,16 @@ figure.galery-item:hover{
 
  figure.galery-item img{
     width:100%;
-    aspect-ratio: 16/9; /*Mexe com a proporção do elemento*/
+    aspect-ratio: 16/9;
     object-fit: cover;
     display: block;
-    
-    /* transition-property: filter, transform; Propriedades que serão inclusas na transição */
-    /* transition-duration: 0.200s; Duração da transição */
-    /* transition-delay: 0; Tempo de espera para que a transição comece */
-    /* transition-timing-function: ease-out; Função que controla a velocidade da transição baseada na curva de bezier */
-
     transition: filter, transform 0.200s ease-out 0s; 
-    
-
-    
- 
-
  }
 
  figure.galery-item img:hover{
-    filter:  hue-rotate(10deg) /*Gira a cor da imagem*/ contrast(101%) /*Aumenta o contraste da imagem*/ saturate(200%); /*Aumenta a saturação da imagem*/
-
+    filter:  hue-rotate(10deg) contrast(101%) saturate(200%); 
     transform: scale(1.03) rotate(-0.3deg);
-
-    
- }
+}
 
 
  figure.galery-item figcaption.description{
@@ -329,12 +271,122 @@ footer{
         transform: scale(1.05);
 
     }
-
-   
 }
 
-/* 
-Se você estiver usando transformações, valores negativos em translateY movem o elemento para cima e valores positivos movem o elemento para baixo. */
+
+.product-container {
+    display: flex;
+    align-items: center;
+    margin-top: 3.6rem;
+}
+
+.product {
+    display: flex;
+    width: 100%;
+}
+
+.product-item {
+    width: 60%;
+    margin-right: 2rem; 
+    max-width: 60%; 
+}
+
+.description {
+    width: 40%; 
+}
+
+.product-item img {
+    width: 100%; 
+    max-height: 100%; 
+    display: block;
+    margin: 0 auto;
+}
+
+.description h2 {
+    font-size: 2.4rem; 
+    margin-bottom: 1rem; 
+}
+
+.description p {
+    margin-bottom: 1rem;
+}
+
+
+button {
+    padding: 1rem 2rem; 
+    font-size: 1.6rem; 
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c8bcbc;
+}
+
+.image-gallery {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin-left: 5rem; 
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column; 
+    margin-right: 10rem;
+}
+
+.thumbnail {
+    width: 60px; /* Set the width of thumbnails */
+    height: auto;
+    margin-bottom: 0.5rem; /* Adjust spacing between thumbnails */
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    opacity: 0.7;
+}
+
+.main-image {
+    height: auto;
+    width: 70%;
+}
+
+.description {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin:2rem;
+}
+
+.size-list {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    margin-right: 5rem;
+}
+
+.size-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    color: #171616;
+}
+
+.size-btn.selected {
+    background-color: #d3c2c2;
+    color: #171616;
+}
 
 @media screen and (max-width: 768px) {
     div#app header,
@@ -351,6 +403,21 @@ Se você estiver usando transformações, valores negativos em translateY movem 
 
     main div.container section.galery-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image-gallery {
+        width: 100%;
+        margin: 0;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .main-image {
+        width: 80%;
+    }
+
+    .thumbnails {
+        margin: 0;
     }
 }
 
@@ -369,6 +436,40 @@ Se você estiver usando transformações, valores negativos em translateY movem 
     main div.container section.galery-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .thumbnails {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        flex-wrap: nowrap; /* Ensure thumbnails stay in a single row */
+    }
+
+    .thumbnail {
+        flex: 0 0 calc(20% - 1rem); /* Set width to 20% of the container width minus margin */
+        height: auto;
+        margin: 0 0.5rem; /* Adjust margin for spacing between thumbnails */
+    }
+
+    .main-image {
+        width: 50%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        width: 40%; /* Adjust width for the description */
+        margin-left: 2rem; /* Add margin to separate from the main image */
+    }
+
+    .product-container {
+        flex-direction: row; /* Ensure thumbnails and main image are in a row */
+        align-items: flex-start; /* Align items at the start of the flex container */
+        justify-content: space-between; /* Distribute items along the main axis with space between */
+        flex-wrap: wrap; /* Allow items to wrap if they exceed container width */
+    }
+    
+    
 }
 
 
@@ -387,4 +488,39 @@ Se você estiver usando transformações, valores negativos em translateY movem 
     main div.container section.galery-container {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .product {
+        flex-direction: column;
+        align-items:  center;
+        justify-content: center;
+    }
+
+    .description {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .size-list {
+        margin: 0;
+    }
+
+    .thumbnails {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .image-gallery {
+        width: 400px;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

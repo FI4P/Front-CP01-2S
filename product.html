@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoblog</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+  rel="stylesheet"
+  type="text/css"
+  href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/duotone/style.css"
+/>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
+    <script src="index.js"></script>
+
+
+</head>
+<body>
+    <div id="app">
+        <header class="container">
+                <nav>
+                    <i class="ph ph-shopping-cart-simple"></i>
+
+                    <ul>
+                        <li>Carrinho</li>
+                        <li class="active">Produtos</li>
+                    </ul>
+                </nav>
+               
+
+                <form>
+                    
+                    <div class="input-wrapper">
+                        <label for="search">Pesquise por produtos</label>
+                        <input type="text" id="search" placeholder="Pesquise por produtos">
+                    </div>
+                </form>
+
+                <!-- Utilizando a API que retorna a imagem -->
+                <img class="avatar" src="https://randomuser.me/api/portraits/men/34.jpg" alt="Icone de usuário">
+        </header>
+        <main>
+
+        
+            <div class="product-container">
+
+              <section class="product">
+                <div class="image-gallery">
+                    <div class="thumbnails">
+                        <img src="./assets/shoe1.png" alt="Thumbnail 1" class="thumbnail">
+                        <img src="./assets/shoe2.png" alt="Thumbnail 2" class="thumbnail">
+                        <img src="./assets/shoe3.png" alt="Thumbnail 3" class="thumbnail">
+                        <img src="./assets/shoe4.png" alt="Thumbnail 4" class="thumbnail">
+                        <img src="./assets/shoe5.png" alt="Thumbnail 5" class="thumbnail">
+                    </div>
+                    <img src="./assets/shoe1.png" alt="Foto número01 da galeria" class="main-image">
+                </div>
+                <figcaption class="description">
+                  <h2>Air Jordan 1</h2>
+                  <div class="R$1000s">
+                      <p>R$ 1000,00</p>
+                  </div>
+                  <p>Descrição do produto</p>
+                  <!-- List of sizes -->
+                  <div class="size-list">
+                      <button class="size-btn">32</button>
+                      <button class="size-btn">33</button>
+                      <button class="size-btn">34</button>
+                      <button class="size-btn">35</button>
+                      <button class="size-btn">36</button>
+                      <button class="size-btn">37</button>
+                      <button class="size-btn">38</button>
+                      <button class="size-btn">39</button>
+                      <button class="size-btn">40</button>
+                      <button class="size-btn">41</button>
+                      <button class="size-btn">42</button>
+                      <button class="size-btn">43</button>
+                      <button class="size-btn">44</button>
+                      <button class="size-btn">45</button>
+                      <button class="size-btn">46</button>
+                      <button class="size-btn">47</button>
+                  </div>
+                  <button class="add-to-cart">Adicionar ao carrinho</button>
+              </figcaption>
+              
+            </section>
+            
+            
+
+
+
+            </div>
+        
+        </main>
+        
+        <footer class="container">
+            
+          <p> Enzo Rodrigues & Matheus Hammarstrom </p>
+        <footer>
+
+            
+        
+    </div>
+</body>
+</html>
